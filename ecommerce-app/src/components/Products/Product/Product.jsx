@@ -8,27 +8,28 @@ const Product = ( {product}) => {
         <CardMedia
             component='img'
             height='140'
-            image=''
+            image={product.image}
             alt={product.name}
+            sx={{ objectFit: 'contain', width: '100%'}}
         />
 
         <CardContent>
-            <Typography variant='h5' component='div'>
+            <Typography variant='h5' component='div' sx={{ mb: 2}}>
                 {product.name}
             </Typography>
 
-            <Typography variant='body2' color='text.secondary'>
+            <Typography variant='body2' sx={{ color: 'grey' }}>
                 {product.description}
-            </Typography>
-
-            <Typography variant='h7' color='textSecondary'>
-                {product.price}
             </Typography>
         </CardContent>
 
-        <CardActions>
-            <IconButton aria-label='Add to cart'>
-                <AddShoppingCartIcon />
+        <CardActions sx={{ display: 'flex', justifyContent: 'space-between', padding: '16px' }}>
+            <Typography variant='h5' color='primary.main'>
+                {product.price}
+            </Typography>
+            
+            <IconButton aria-label='Add to cart' sx={{ fontSize: '2rem' }}>
+                <AddShoppingCartIcon fontSize='inherit'/>
             </IconButton>
         </CardActions>
     </Card>
