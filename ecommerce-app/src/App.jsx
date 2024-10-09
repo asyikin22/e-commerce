@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import { Container, palette } from '@mui/system'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import ShoeCustomizer from './components/ShoeCustomizer'
 
 const darkTheme = createTheme ({
   palette: {
@@ -22,6 +23,10 @@ const App = () => {
       <div>
         <Navbar />
         <Container sx={{ mt: 10}}>
+          <h2 style={{ textAlign: 'center', fontSize: '3rem'}}>Customize Your Own Shoes!</h2>
+          <div style={{ marginBottom : '20px'}}>
+            <ShoeCustomizer />
+          </div>
           <Products />
         </Container>
       </div>

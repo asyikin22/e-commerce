@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import {Box } from '@mui/system'
 
 const ShoeCustomizer = () => {
     const mountRef = useRef(null)                                                   //step 1: create reference for mount point
@@ -9,7 +10,7 @@ const ShoeCustomizer = () => {
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
         const renderer = new THREE.WebGLRenderer();
 
-        renderer.setSize (window.innerWidth, window.innerHeight)                     // step 3: Set the size of the renderer
+        renderer.setSize (window.innerWidth * 0.85, window.innerHeight * 0.7)        // step 3: Set the size of the renderer
         mountRef.current.appendChild(renderer.domElement)                            // step 4: Append renderer to DOM
         
         //add light
@@ -35,11 +36,30 @@ const ShoeCustomizer = () => {
 
         //clean up on componentn unmount
         return () => {
-            mountRef.current.removeChild(renderer.domElement)                       //Step 5
+            renderer.dispose()
+            scene.dispose?.()
+            mountRef.current.removeChild(renderer.domElement)                       //Step 5  
         }
     }, [])                                                                          //Step 6: Empty dependency array
-
-    return <div ref={mountRef} />                                                   //step 7: render div for mounting
+                                                                                    
+    return (                                                                       //step 7: render div for mounting
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'Center',
+                alignItems: 'Center',
+                width: '100%',
+                height: 'auto',
+                margin: { xs: '10px', md:'20px auto'},
+                padding: '10px',
+                maxWidth: '1000px',
+                boxSizing: 'border-box', 
+                overflow: 'hidden'
+            }}
+        >
+            <div ref={mountRef} style={{width: '100%', height: 'auto', maxWidth: '100%'}} /> 
+        </Box>
+    )                                                 
 }
 
 export default ShoeCustomizer
