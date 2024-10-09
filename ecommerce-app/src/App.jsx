@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import { Container, palette } from '@mui/system'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import ShoeCustomizer from './components/ShoeCustomizer'
+import ShoeCustomizer from './components/ShoeCustomizer/ShoeCustomizer'
 
 const darkTheme = createTheme ({
   palette: {
