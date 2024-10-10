@@ -1,0 +1,35 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["See you later", "Goodbye", "I'm Leaving", "Have a Good day"],
+         "responses": ["Sad to see you go", "Talk to you later", "Goodbye!"],
+         "context_set": ""
+        },
+        {"tag": "shop",
+         "patterns": ["Id like to buy something", "whats the latest collection in store?", "what do you reccommend?"],
+         "responses": ["We sell women's shoes", "We have nice shoes for every occasion"],
+         "context_set": ""
+        },
+        {"tag": "hours",
+         "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
+         "responses": ["We are open 9am-5pm Monday-Friday!"],
+         "context_set": ""
+        },
+        {"tag": "shipping",
+         "patterns": ["When will my order be shipped?", "What are the shipping options?", "How long does shipping take?"],
+         "responses": ["Shipping typically takes 3-5 business days for standard delivery.", "You can track your shipment using the tracking number provided",
+         "We offer standard and expedited shipping options."],
+         "context_set": ""
+        }, 
+        {"tag": "payment",
+        "patterns": ["how do I make a payment?", "what payment methods do you accept?", "how can I pay for my order?"],
+        "responses": [ "You can make a payment using credit card, PayPal, or bank transfer.", 
+        "We accept various payment methods including credit cards and digital wallets."],
+        "context_set": ""
+        }
+   ]
+}
