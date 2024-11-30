@@ -1,4 +1,12 @@
 const dotenv = require("dotenv");
+// const cors = require('cors');
+
+// // Allow CORS for specific origins
+// app.use(cors({
+//   origin: "http://localhost:5173", // Your React app's origin
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+// }));
 
 let ENV_FILE_NAME = "";
 switch (process.env.NODE_ENV) {
@@ -26,7 +34,7 @@ const ADMIN_CORS =
   process.env.ADMIN_CORS || "http://localhost:7000,http://localhost:7001";
 
 // CORS to avoid issues when consuming Medusa from a client
-const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
+const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000,http://localhost:5173";
 
 const DATABASE_URL =
   process.env.DATABASE_URL || "postgres://localhost/medusa-starter-default";
